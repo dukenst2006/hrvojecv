@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class DownloadSourceController extends Controller
 {
@@ -46,7 +47,6 @@ class DownloadSourceController extends Controller
             'title' => 'required|min:3',
             'desc' => 'required|min:3|max:30',
             'file' => 'required|max:10000'
-
         ]);
 
         if($validator->fails())
@@ -57,33 +57,25 @@ class DownloadSourceController extends Controller
         $file = $request->file;
 
         $extension = $request->file->getClientOriginalExtension();
+        $tempFilename = $request->title;
         //// get extension
-        $filename = $request->title . '-' . Carbon::now()->toDateString() . '.' . $extension;
-        //// e.g. Data-29012018.pdf
-        $path = 'source_download';
-        //path, project/public/source_download
-    
-        $file->move($path, $filename);
-
+        $filename = $tempFilename . '-' . Carbon::now()->toDateString() . '.' . $extension;
+        //// e.g. fileTIt-29012018.pdf
+        
+        $file->storeAs('source_files', $filename);
 
         $newFile = new DownloadSource();
         $newFile->title = $request->title;
         $newFile->desc = $request->desc;
         $newFile->file_name = $filename;
         $newFile->save();
-
-
         
         return redirect()->route('downloads.index');
-
-
     }
 
     public function downloadFile($filename)
     {
-        $file = 'source_download/'.$filename;
-
-        return response()->download($file);
+        return response()->download(public_path().'/storage/source_files/'.$filename);
     }
 
     /**
@@ -92,13 +84,22 @@ class DownloadSourceController extends Controller
      * @param  \App\DownloadSource  $downloadSource
      * @return \Illuminate\Http\Response
      */
-    public function destroy($filename)
+    public function destroy(Request $request, $filename)
     {
-        $file = public_path() . '\\' . 'source_download\\' . $filename;
-        $a = File::delete($file);
+        $filePath = public_path().'/storage/source_files/'.$filename;
 
-        dd($a);
+        if (is_file($filePath)) {
+           $delete = unlink($filePath);
+            if (!$delete) {
+                return redirect()->route('downloads.index')->with('status', 'Can\'t delete file');
+            }
+        } elseif(!$filePath) {
+            return redirect()->route('downloads.index')->with('status', 'File not found!');
+        }
 
-        return redirect()->route('downloads.index');
+        $deleteFromDb = DownloadSource::findOrFail($request->id);
+        $deleteFromDb->delete();
+
+        return redirect()->route('downloads.index')->with('status', 'File successfully deleted.');
     }
 }
