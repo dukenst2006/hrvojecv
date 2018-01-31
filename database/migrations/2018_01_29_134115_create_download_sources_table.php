@@ -18,6 +18,7 @@ class CreateDownloadSourcesTable extends Migration
             $table->string('title')->nullable();
             $table->string('desc')->nullable();
             $table->string('file_name')->nullable();
+            $table->string('type')->nullable();
             $table->timestamps();
         });
     }

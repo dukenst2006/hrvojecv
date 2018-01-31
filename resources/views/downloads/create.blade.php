@@ -2,7 +2,19 @@
 @section('content')
 @section('active_page', 'Download area')
 
-{!! Form::open(['route' => 'downloads.store', 'method' => 'post', 'files' => true]) !!}
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+{!! Form::open(['route' => 'files.store', 'method' => 'post', 'files' => true]) !!}
+
+	{{ Form::select('type', ['sourceFile' => 'Source File', 'screenshot' => 'Screenshot']) }}
 
 	<div class="form-group">
 		{{ Form::label('title', 'Add title for uploading item', ['class' => 'form-label']) }}

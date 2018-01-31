@@ -142,7 +142,7 @@
 										<li><a href="{{ route('projects.create') }}">Project</a></li>
 										<li><a href="{{ route('language.create') }}">Language</a></li>
 										<li><a href="{{ route('education.create') }}">Education</a></li>
-										<li><a href="{{ route('downloads.create') }}">Source file</a></li>
+										<li><a href="{{ route('files.create') }}">Source file</a></li>
 									</ul>
 								</li>
 
@@ -192,7 +192,7 @@
 								<li>
 									<a href="#"><i class="icon-download"></i> <span>Source code area</span></a>
 									<ul>
-										<li><a href="{{ route('downloads.index') }}">Download source files</a></li>
+										<li><a href="{{ route('files.index') }}">Download source files</a></li>
 										<li><a href="{{ route('screenshots.index') }}">Screenshots</a></li>
 									</ul>
 								</li>

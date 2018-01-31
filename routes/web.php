@@ -83,9 +83,16 @@ Route::group(['prefix' => 'cv', 'middleware' => 'auth'], function() {
     Route::GET('contact_messages', 'MessageController@adminIndex')->name('contact.msg.index');
     Route::POST('contact_messages/send', 'MessageController@adminSend')->name('contact.admin.send');
 
-    Route::resource('screenshots', 'ScreenshotController');
-    Route::resource('downloads', 'DownloadSourceController')->except('show');
+    // SOURCE FILES ROUTES
+    Route::GET('source_files', 'DownloadSourceController@sourceFilesIndex')->name('files.index');
+    Route::GET('files/create', 'DownloadSourceController@create')->name('files.create');
+    Route::POST('files', 'DownloadSourceController@store')->name('files.store');
+    Route::DELETE('source_files/{filename}', 'DownloadSourceController@destroy')->name('files.destroy');
     Route::GET('download/{filename}', 'DownloadSourceController@downloadFile');
+
+    // SCREENSHOTS ROUTES (ALL SAME AS FOR SOURCE FILES EXCEPT INDEX)
+    Route::get('screenshots', 'DownloadSourceController@screenshotsIndex')->name('screenshots.index');
+    
 
 
 });

@@ -14,15 +14,29 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 class DownloadSourceController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the source files.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function sourceFilesIndex()
     {
-        $files = DownloadSource::all();
+        $type = 'sourceFile';
+        $sourceFiles = DownloadSource::where('type', $type)->get();
 
-        return view('downloads.index', compact('files'));
+        return view('downloads.index', compact('sourceFiles'));
+    }
+
+    /**
+     * Display a listing of screenshots.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function screenshotsIndex()
+    {
+        $type = 'screenshot';
+        $screenshots = DownloadSource::where('type', $type)->get();
+
+        return view('screenshots.index', compact('screenshots'));
     }
 
     /**
@@ -45,16 +59,17 @@ class DownloadSourceController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'title' => 'required|min:3',
-            'desc' => 'required|min:3|max:30',
+            'desc' => 'required|min:3|max:50',
             'file' => 'required|max:10000'
         ]);
 
         if($validator->fails())
         {
-            return redirect()->back()->with($errors)->withInput();
+            return redirect()->back()->withErrors($validator)->withInput();
         }
 
         $file = $request->file;
+        $type = $request->type;
 
         $extension = $request->file->getClientOriginalExtension();
         $tempFilename = $request->title;
@@ -62,20 +77,25 @@ class DownloadSourceController extends Controller
         $filename = $tempFilename . '-' . Carbon::now()->toDateString() . '.' . $extension;
         //// e.g. fileTIt-29012018.pdf
         
-        $file->storeAs('source_files', $filename);
+        $file->storeAs($type, $filename);
 
         $newFile = new DownloadSource();
         $newFile->title = $request->title;
         $newFile->desc = $request->desc;
         $newFile->file_name = $filename;
+        $newFile->type = $type;
         $newFile->save();
         
-        return redirect()->route('downloads.index');
+        if($type == 'sourceFile'){
+            return redirect()->route('files.index');
+        }
+
+        return redirect()->route('screenshots.index');
     }
 
-    public function downloadFile($filename)
+    public function downloadFile($filename, $type)
     {
-        return response()->download(public_path().'/storage/source_files/'.$filename);
+        return response()->download(public_path().'/storage'.'/'.$type.'/'.$filename);
     }
 
     /**
@@ -86,20 +106,28 @@ class DownloadSourceController extends Controller
      */
     public function destroy(Request $request, $filename)
     {
-        $filePath = public_path().'/storage/source_files/'.$filename;
+        $type = $request->type;
+        $filePath = public_path().'/storage'.'/'.$type.'/'.$filename;
 
         if (is_file($filePath)) {
            $delete = unlink($filePath);
-            if (!$delete) {
-                return redirect()->route('downloads.index')->with('status', 'Can\'t delete file');
+            if (!$delete && $type == 'sourceFile') {
+                return redirect()->route('files.index')->with('status', 'Can\'t delete file');
+            } elseif(!$delete && $type == 'screenshot') {
+                return redirect()->route('screenshots.index')->with('status', 'Can\'t delete file');
             }
-        } elseif(!$filePath) {
-            return redirect()->route('downloads.index')->with('status', 'File not found!');
+        } elseif(!$filePath && $type == 'sourceFile') {
+            return redirect()->route('files.index')->with('status', 'File not found!');
+        } elseif (!$filePath && $type == 'screenshot') {
+            return redirect()->route('screenshots.index')->with('status', 'File not found!');
         }
 
         $deleteFromDb = DownloadSource::findOrFail($request->id);
         $deleteFromDb->delete();
 
-        return redirect()->route('downloads.index')->with('status', 'File successfully deleted.');
+        if($type == 'sourceFile') {
+            return redirect()->route('files.index')->with('status', 'File successfully deleted.');
+        }
+        return redirect()->route('screenshots.index')->with('status', 'File successfully deleted.');
     }
 }
