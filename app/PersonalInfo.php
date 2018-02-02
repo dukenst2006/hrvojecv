@@ -13,7 +13,7 @@ class PersonalInfo extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'surname', 'gender', 'dob', 'pob', 'street', 'house_no', 'postcode', 'state', 'tel', 'mob', 'email', 'skype', 'nationality', 'current_residence'
+        'name', 'surname', 'gender', 'dob', 'pob', 'street', 'house_no', 'postcode', 'state', 'tel', 'mob', 'email', 'skype', 'nationality', 'current_residence', 'position', 'summary'
     ];
 
     /**

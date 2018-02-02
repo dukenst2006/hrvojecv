@@ -88,10 +88,14 @@ Route::group(['prefix' => 'cv', 'middleware' => 'auth'], function() {
     Route::GET('files/create', 'DownloadSourceController@create')->name('files.create');
     Route::POST('files', 'DownloadSourceController@store')->name('files.store');
     Route::DELETE('source_files/{filename}', 'DownloadSourceController@destroy')->name('files.destroy');
-    Route::GET('download/{filename}', 'DownloadSourceController@downloadFile');
+    Route::GET('download/{filename}/{type}', 'DownloadSourceController@downloadFile');
 
     // SCREENSHOTS ROUTES (ALL SAME AS FOR SOURCE FILES EXCEPT INDEX)
     Route::get('screenshots', 'DownloadSourceController@screenshotsIndex')->name('screenshots.index');
+
+    // DOWNLOAD CV IN PDF
+    Route::get('download_cv_in_pdf', 'DownloadSourceController@downloadPdfCv')->name('pdfCvDownload');
+
     
 
 

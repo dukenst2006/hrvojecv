@@ -76,7 +76,7 @@
 			<div class="heading-elements">
 				<div class="heading-btn-group">
 					<a href="{{ route('home') }}" class="btn btn-link btn-float has-text"><i class="icon-home text-primary"></i><span>Homepage</span></a>
-					<a href="#" class="btn btn-link btn-float has-text"><i class="icon-file-pdf text-primary"></i> <span>Download CV in PDF</span></a>
+					<a href="{{ route('pdfCvDownload') }}" class="btn btn-link btn-float has-text"><i class="icon-file-pdf text-primary"></i> <span>Download CV in PDF</span></a>
 					<a href="{{ route('contact.create', \Auth::id()) }}" class="btn btn-link btn-float has-text"><i class="icon-envelop text-primary"></i> <span>Contact</span></a>
 				</div>
 			</div>
@@ -199,8 +199,7 @@
 								<li>
 									<a href="#"><i class="icon-unfold"></i> <span>Job</span></a>
 									<ul>
-										<li><a href="{{ route('job_offer.create') }}">Place job offer</a></li>
-										<li><a href="{{ route('userJobShow', \Auth::id()) }}">View job offer status</a></li>
+										<li><a href="{{ route('job_offer.create') }}">Place/View job offer</a></li>
 									</ul>
 								</li>
 								<li>

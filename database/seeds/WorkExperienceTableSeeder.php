@@ -18,7 +18,7 @@ class WorkExperienceTableSeeder extends Seeder
     		'address' => 'Svetog L.B.Mandića 111',
     		'position' => 'Backend developer',
     		'work_from' => '23.7.2017.',
-    		'work_to' => null,
+    		'work_to' => '31.1.2018.',
     		'desc' => 'PHP s Laravel i Symfony FW',
     		'currently_employed' => true
     	]);

@@ -14,17 +14,17 @@ class EducationTableSeeder extends Seeder
     {
         $items = [
             [
-               	'institute' => 'Srednja Škola Donji Miholjac',
-                'title' => 'Komercijalist',
+               	'institute' => 'High school Donji Miholjac',
+                'title' => 'Commerce/Economy',
                 'period' => '2006. - 2010.',
                 'add_info' => '',
                 'accomplishments' => ''
             ],
             [
-                'institute' => 'POU Nova Gradiška',
-                'title' => 'Prometni tehničar',
+                'institute' => 'POU Nova Gradiska',
+                'title' => 'Traffic techician',
                 'period' => '2015. - 2016.',
-                'add_info' => 'Profesionalni vozač kamiona s KOD95',
+                'add_info' => 'Professional truck driver with CODE95',
                 'accomplishments' => ''
             ]
         ];

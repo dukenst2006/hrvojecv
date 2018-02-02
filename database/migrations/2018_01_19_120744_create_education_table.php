@@ -20,6 +20,7 @@ class CreateEducationTable extends Migration
             $table->string('period')->default(NULL);
             $table->string('add_info')->nullable()->default(NULL);
             $table->string('accomplishments')->nullable()->default(NULL);
+            $table->timestamps();
         });
     }
 

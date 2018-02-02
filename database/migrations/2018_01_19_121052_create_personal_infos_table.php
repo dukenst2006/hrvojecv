@@ -15,21 +15,23 @@ class CreatePersonalInfosTable extends Migration
     {
         Schema::create('personal_infos', function (Blueprint $table) {
             $table->increments('id')->unique();
-            $table->string('name')->nullable()->default(NULL);
-            $table->string('surname')->nullable()->default(NULL);
-            $table->string('gender')->nullable()->default(NULL);
-            $table->string('dob')->nullable()->default(NULL);
-            $table->string('pob')->nullable()->default(NULL);
-            $table->string('current_residence')->nullable()->default(NULL);
-            $table->string('street')->nullable()->default(NULL);
-            $table->integer('house_no')->nullable()->default(NULL);
-            $table->string('postcode')->nullable()->default(NULL);
-            $table->string('state')->nullable()->default(NULL);
-            $table->string('tel')->nullable()->default(NULL);
-            $table->string('mob')->nullable()->default(NULL);
-            $table->string('email')->nullable()->default(NULL);
-            $table->string('skype')->nullable()->default(NULL);
-            $table->string('nationality')->nullable()->default(NULL);
+            $table->string('name')->nullable();
+            $table->string('surname')->nullable();
+            $table->string('position')->nullable();
+            $table->string('summary')->nullable();
+            $table->string('gender')->nullable();
+            $table->string('dob')->nullable();
+            $table->string('pob')->nullable();
+            $table->string('current_residence')->nullable();
+            $table->string('street')->nullable();
+            $table->integer('house_no')->nullable();
+            $table->string('postcode')->nullable();
+            $table->string('state')->nullable();
+            $table->string('tel')->nullable();
+            $table->string('mob')->nullable();
+            $table->string('email')->nullable();
+            $table->string('skype')->nullable();
+            $table->string('nationality')->nullable();
         });
     }
 

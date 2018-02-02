@@ -36278,13 +36278,6 @@ label.display-block {
 .infoRadioInput {
     display: none;
 }
-#informationDiv {
-    display: none;
-    margin-top: 10em;
-}
-#companyInputData {
-    display: none;
-}
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   text-align: center;
 }
@@ -36301,17 +36294,8 @@ label.display-block {
     display: none;
     margin-top: 10em;
 }
-#personalInputData {
-    display: none;
-}
 .print-error-msg > ul {
     list-style-type: none;
-}
-#pleaseChoose, #pleaseEnter {
-    padding-bottom: 1em;
-}
-#specifyRole {
-  display: none;
 }
 #accessResponseContainer {
   margin-top:10em;

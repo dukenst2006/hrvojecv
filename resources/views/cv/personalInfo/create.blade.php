@@ -74,6 +74,15 @@
 		<input type="text" name="nationality">
 	</div>
 
+	<div>
+		<label>Position</label>
+		<input type="text" name="position">
+	</div>
+	<div>
+		<label>Professional summary</label>
+		<input type="textarea" name="summary">
+	</div>
+
 	<input type="submit" name="submit" value="Submit" class="btn btn-success">
 
 </form>

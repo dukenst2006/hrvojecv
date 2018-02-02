@@ -60,7 +60,7 @@ class WorkExperienceController extends Controller
         $newWorkExp->save();
 
 
-        return redirect()->route('workexperience.index')->with('status', 'Job added!');
+        return redirect()->route('work_experience.index')->with('status', 'Job added!');
     }
 
     /**
@@ -100,7 +100,7 @@ class WorkExperienceController extends Controller
 
         $updateJob->save();
 
-        return redirect()->route('workexperience.index')->with('status', 'Job edited!');
+        return redirect()->route('work_experience.index')->with('status', 'Job edited!');
     }
 
     /**
@@ -114,6 +114,6 @@ class WorkExperienceController extends Controller
         $destroyJob = WorkExperience::findOrFail($id);
         $destroyJob->delete();
 
-        return redirect()->route('workexperience.index')->with('status', 'Job deleted!');
+        return redirect()->route('work_experience.index')->with('status', 'Job deleted!');
     }
 }

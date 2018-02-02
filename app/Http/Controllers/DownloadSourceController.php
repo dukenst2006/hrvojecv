@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\DownloadSource;
+use App\PersonalInfo;
+use App\WorkExperience;
+use App\Project;
+use App\Language;
+use App\Education;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -10,6 +15,7 @@ use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use PDF;
 
 class DownloadSourceController extends Controller
 {
@@ -129,5 +135,26 @@ class DownloadSourceController extends Controller
             return redirect()->route('files.index')->with('status', 'File successfully deleted.');
         }
         return redirect()->route('screenshots.index')->with('status', 'File successfully deleted.');
+    }
+
+    
+    public function downloadPdfCv()
+    {
+        $personalInfo = PersonalInfo::all();
+        $education = Education::all()->sortByDesc('created_at');
+        $workExperience = WorkExperience::all()->sortByDesc('created_at');
+        $language = Language::all();
+        $projects = Project::all()->sortByDesc('created_at');
+
+        $data = [
+            ['personalInfo' => $personalInfo],
+            ['education' => $education],
+            ['workExperience' => $workExperience],
+            ['language' => $language],
+            ['projects' => $projects],
+        ];
+
+        $pdf = PDF::loadView('cvPdf', compact('data'));
+        return $pdf->download('hrvojeZubcicCv.pdf');
     }
 }

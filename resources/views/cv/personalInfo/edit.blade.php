@@ -81,8 +81,15 @@
 					<td class="tableHead"><label>Nacionalnost</label></td>
 					<td><input type="text" name="nationality" value="{{ $myself->nationality }}"></td>
 				</tr>
+				<tr>
+					<td class="tableHead"><label>Position</label></td>
+					<td><input type="text" name="position" value="{{ $myself->position }}"></td>
+				</tr>
 			</tbody>
 		</table>
+
+		<p class="tableHead"><label>Professional summary</label></p>
+		<textarea type="text" name="summary" style="width: 50em;">{{ $myself->summary }}</textarea><br>
 
 		<a href="{{ URL::previous() }}" class="btn btn-info" style="display: inline;">Cancel</a>
 		<input type="submit" name="submit" value="Submit" class="btn btn-success" style="display: inline;">

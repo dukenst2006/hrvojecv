@@ -62,6 +62,8 @@ class PersonalInfoController extends Controller
         $newPersonalInfo->email = $personalInfoData['email'];
         $newPersonalInfo->skype = $personalInfoData['skype'];
         $newPersonalInfo->nationality = $personalInfoData['nationality'];
+        $newPersonalInfo->position = $personalInfoData['position'];
+        $newPersonalInfo->summary = $personalInfoData['summary'];
 
         $newPersonalInfo->save();
 
@@ -110,6 +112,8 @@ class PersonalInfoController extends Controller
         $updatePersonalInfo->email = $personalInfoData['email'];
         $updatePersonalInfo->skype = $personalInfoData['skype'];
         $updatePersonalInfo->nationality = $personalInfoData['nationality'];
+        $updatePersonalInfo->position = $personalInfoData['position'];
+        $updatePersonalInfo->summary = $personalInfoData['summary'];
 
         $updatePersonalInfo->save();
 

@@ -23,6 +23,7 @@ class CreateWorkExperiencesTable extends Migration
             $table->string('work_to')->nullable()->default(NULL);
             $table->string('desc')->nullable()->default(NULL);
             $table->string('currently_employed')->nullable()->default(false);
+            $table->timestamps();
         });
     }
 
