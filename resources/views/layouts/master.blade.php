@@ -65,16 +65,16 @@
 
 			<ul class="breadcrumb-elements">
 				<li>
-					<a href="https://www.facebook.com/hrvojez02" style="padding-right: 0;padding-left:2px;margin-left:0;margin-right: 0;"><img class="socialMediaIcons" src="{{ asset('images/social_media/facebook.png') }}" style="width: 25px;height: 25px;"></a>
+					<a href="https://www.facebook.com/hrvojez02" target="_blank" style="padding-right: 0;padding-left:2px;margin-left:0;margin-right: 0;"><img class="socialMediaIcons" src="{{ asset('images/social_media/facebook.png') }}" style="width: 25px;height: 25px;"></a>
 				</li>
 				<li>
-					<a href="https://twitter.com/hhrcadm" style="padding-right: 0;padding-left:2px;margin-left:0;margin-right: 0;"><img class="socialMediaIcons" src="{{ asset('images/social_media/twitter.jpg') }}" style="width: 25px;height: 25px;"></a>
+					<a href="https://twitter.com/hhrcadm" target="_blank" style="padding-right: 0;padding-left:2px;margin-left:0;margin-right: 0;"><img class="socialMediaIcons" src="{{ asset('images/social_media/twitter.jpg') }}" style="width: 25px;height: 25px;"></a>
 				</li>
 				<li>
-					<a href="https://www.linkedin.com/in/hrvoje-zubcic/" style="padding-right: 0;padding-left:2px;margin-left:0;margin-right: 0;"><img class="socialMediaIcons" src="{{ asset('images/social_media/linkedin.png') }}" style="width: 25px;height: 25px;"></a>
+					<a href="https://www.linkedin.com/in/hrvoje-zubcic/" target="_blank" style="padding-right: 0;padding-left:2px;margin-left:0;margin-right: 0;"><img class="socialMediaIcons" src="{{ asset('images/social_media/linkedin.png') }}" style="width: 25px;height: 25px;"></a>
 				</li>
 				<li>
-					<a href="https://medium.com/@zubcic.hrvoje" style="padding-right: 0;padding-left:2px;margin-left:0;margin-right: 0;"><img class="socialMediaIcons" src="{{ asset('images/social_media/medium.png') }}" style="width: 60px;height: 25px;"></a>
+					<a href="https://medium.com/@zubcic.hrvoje" target="_blank" style="padding-right: 0;padding-left:2px;margin-left:0;margin-right: 0;"><img class="socialMediaIcons" src="{{ asset('images/social_media/medium.png') }}" style="width: 60px;height: 25px;"></a>
 				</li>
 			</ul>
 		</div>
@@ -153,7 +153,7 @@
 										<li><a href="{{ route('projects.create') }}">Project</a></li>
 										<li><a href="{{ route('language.create') }}">Language</a></li>
 										<li><a href="{{ route('education.create') }}">Education</a></li>
-										<li><a href="{{ route('files.create') }}">Source file</a></li>
+										<li><a href="{{ route('files.create') }}">Source file/Screenshot</a></li>
 									</ul>
 								</li>
 
@@ -197,6 +197,9 @@
 
 								<!-- More -->
 								<li class="navigation-header"><span>More</span> <i class="icon-menu" title="Forms"></i></li>
+								<li>
+									<a href="{{ route('changelog.index') }}"><i class="icon-newspaper"></i> <span>Changelog</span></a>
+								</li>
 								<li>
 									<a href="{{ route('projects.index') }}"><i class="icon-portfolio"></i> <span>Projects</span></a>
 								</li>

@@ -85,6 +85,10 @@
 					<td class="tableHead"><label>Position</label></td>
 					<td><input type="text" name="position" value="{{ $myself->position }}"></td>
 				</tr>
+				<tr>
+					<td class="tableHead"><label>Key Skills</label></td>
+					<td><input type="text" name="keySkills" value="{{ $myself->key_skills }}"></td>
+				</tr>
 			</tbody>
 		</table>
 

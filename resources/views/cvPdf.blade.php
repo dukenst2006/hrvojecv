@@ -51,8 +51,13 @@
 	<hr>
 
 	<div class="row">
-		<div class="col-lg-12 centerMe boldMe" style="font-size:1.5em;padding-top: 12px;padding-bottom: 12px;">
+		<div class="col-lg-12 centerMe boldMe" style="font-size:1.5em;padding-top: 12px;">
 			<span>@{!! {{ $data[0]['personalInfo'][0]['position'] }} !!}</span>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-12 centerMe boldMe"padding-bottom: 12px;">
+			<span>Key skills: {{ $data[0]['personalInfo'][0]['keySkills'] }}</span>
 		</div>
 	</div>
 

@@ -50,6 +50,7 @@ class PersonalInfoController extends Controller
         $newPersonalInfo->name = $personalInfoData['name'];
         $newPersonalInfo->surname = $personalInfoData['surname'];
         $newPersonalInfo->gender = $personalInfoData['gender'];
+        $newPersonalInfo->key_skills = $personalInfoData['keySkills'];
         $newPersonalInfo->dob = $personalInfoData['dob'];
         $newPersonalInfo->pob = $personalInfoData['pob'];
         $newPersonalInfo->current_residence = $personalInfoData['currentResidence'];
@@ -100,6 +101,7 @@ class PersonalInfoController extends Controller
         $updatePersonalInfo->name = $personalInfoData['name'];
         $updatePersonalInfo->surname = $personalInfoData['surname'];
         $updatePersonalInfo->gender = $personalInfoData['gender'];
+        $updatePersonalInfo->key_skills = $personalInfoData['keySkills'];
         $updatePersonalInfo->dob = $personalInfoData['dob'];
         $updatePersonalInfo->pob = $personalInfoData['pob'];
         $updatePersonalInfo->current_residence = $personalInfoData['currentResidence'];

@@ -31,6 +31,7 @@ class CreatePersonalInfosTable extends Migration
             $table->string('mob')->nullable();
             $table->string('email')->nullable();
             $table->string('skype')->nullable();
+            $table->string('key_skills')->nullable();
             $table->string('nationality')->nullable();
         });
     }

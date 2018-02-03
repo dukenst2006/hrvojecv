@@ -100,6 +100,9 @@ Route::group(['prefix' => 'cv', 'middleware' => 'auth'], function() {
     Route::get('change_password/{id}', 'UserController@userEditPassword')->name('change.password');
     Route::put('change_password/{id}', 'UserController@changePassword')->name('post.change.pass');
 
+    // CHANGELOG
+    Route::resource('changelog', 'ChangelogController');
+
     
 
 

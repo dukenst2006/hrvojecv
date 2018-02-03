@@ -82,6 +82,10 @@
 		<label>Professional summary</label>
 		<input type="textarea" name="summary">
 	</div>
+	<div>
+		<label>Key Skills</label>
+		<input type="text" name="keySkills">
+	</div>
 
 	<input type="submit" name="submit" value="Submit" class="btn btn-success">
 

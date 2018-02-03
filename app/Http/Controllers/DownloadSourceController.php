@@ -78,7 +78,7 @@ class DownloadSourceController extends Controller
         $type = $request->type;
 
         $extension = $request->file->getClientOriginalExtension();
-        $tempFilename = $request->title;
+        $tempFilename = str_replace(' ', '', $request->title);
         //// get extension
         $filename = $tempFilename . '-' . Carbon::now()->toDateString() . '.' . $extension;
         //// e.g. fileTIt-29012018.pdf
