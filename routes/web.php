@@ -96,6 +96,10 @@ Route::group(['prefix' => 'cv', 'middleware' => 'auth'], function() {
     // DOWNLOAD CV IN PDF
     Route::get('download_cv_in_pdf', 'DownloadSourceController@downloadPdfCv')->name('pdfCvDownload');
 
+    //change password routes
+    Route::get('change_password/{id}', 'UserController@userEditPassword')->name('change.password');
+    Route::put('change_password/{id}', 'UserController@changePassword')->name('post.change.pass');
+
     
 
 

@@ -1,8 +1,9 @@
 @extends('layouts.master')
 @section('content')
-@section('active_page', 'Users')
+@section('active_page', 'Edit Password')
 
-@if ($errors->any())
+<div class="container" style="text-align: center;">
+    @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
             @foreach ($errors->all() as $error)
@@ -10,20 +11,21 @@
             @endforeach
         </ul>
     </div>
-@endif
+    @endif
 
-
-{!! Form::open(['route' => ['users.changePassword', \Auth::id()], 'method' => 'PUT']) !!}
-    {{ csrf_field() }}
+{!! Form::open(['route' => ['post.change.pass', \Auth::id()], 'method' => 'PUT']) !!}
 
 	{{ Form::label('password', 'Enter new password')}}
+    <br>
 	{{ Form::password('password', null, ['placeholder' => 'Enter new password', 'required' => 'required']) }}
-
+    <br>
 	{{ Form::label('password_confirmation') }}
+    <br>
 	{{ Form::password('password_confirmation'), null, ['placeholder' => 'Confirm password', 'required' => 'required'] }}
-
-	{{ Form::submit('Submit') }}
+    <br><br>
+	{{ Form::submit('Submit', ['class' => 'btn btn-success']) }}
 
 {!! Form::close() !!}
+</div>
 
 @endsection

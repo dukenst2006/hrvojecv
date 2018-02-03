@@ -36,9 +36,9 @@
 					</a>
 
 					<ul class="dropdown-menu dropdown-menu-right">
-						<li><a href="{{ route('users.show', \Auth::id()) }}"><i class="icon-user-plus"></i> My profile</a></li>
+						<li><a href="{{ route('users.edit', \Auth::id()) }}"><i class="icon-user-plus"></i> My profile</a></li>
 						<li class="divider"></li>
-						<li><a href="{{-- {{ route('users.editPassword', \Auth::id()) }} --}}"><i class="icon-cog5"></i> Change password</a></li>
+						<li><a href="{{ route('change.password', \Auth::id()) }}"><i class="icon-cog5"></i> Change password</a></li>
 						<li><a href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
@@ -64,7 +64,18 @@
 			</ul>
 
 			<ul class="breadcrumb-elements">
-				
+				<li>
+					<a href="https://www.facebook.com/hrvojez02" style="padding-right: 0;padding-left:2px;margin-left:0;margin-right: 0;"><img class="socialMediaIcons" src="{{ asset('images/social_media/facebook.png') }}" style="width: 25px;height: 25px;"></a>
+				</li>
+				<li>
+					<a href="https://twitter.com/hhrcadm" style="padding-right: 0;padding-left:2px;margin-left:0;margin-right: 0;"><img class="socialMediaIcons" src="{{ asset('images/social_media/twitter.jpg') }}" style="width: 25px;height: 25px;"></a>
+				</li>
+				<li>
+					<a href="https://www.linkedin.com/in/hrvoje-zubcic/" style="padding-right: 0;padding-left:2px;margin-left:0;margin-right: 0;"><img class="socialMediaIcons" src="{{ asset('images/social_media/linkedin.png') }}" style="width: 25px;height: 25px;"></a>
+				</li>
+				<li>
+					<a href="https://medium.com/@zubcic.hrvoje" style="padding-right: 0;padding-left:2px;margin-left:0;margin-right: 0;"><img class="socialMediaIcons" src="{{ asset('images/social_media/medium.png') }}" style="width: 60px;height: 25px;"></a>
+				</li>
 			</ul>
 		</div>
 
@@ -257,9 +268,7 @@
 
 			<div class="navbar-right">
 				<ul class="nav navbar-nav">
-					<li><a href="#">About</a></li>
-					<li><a href="#">Terms</a></li>
-					<li><a href="#">Contact</a></li>
+					<li><a href="#">PHP: 7.1 | Laravel: 5.5 | Version: 0.1.0 Beta</a></li>
 				</ul>
 			</div>
 		</div>
