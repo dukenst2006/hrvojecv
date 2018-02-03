@@ -57,7 +57,7 @@
 	</div>
 	<div class="row">
 		<div class="col-lg-12 centerMe boldMe"padding-bottom: 12px;">
-			<span>Key skills: {{ $data[0]['personalInfo'][0]['keySkills'] }}</span>
+			<span>Key skills: {{ $data[0]['personalInfo'][0]['key_skills'] }}</span>
 		</div>
 	</div>
 
