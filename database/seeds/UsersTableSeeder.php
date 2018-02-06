@@ -14,22 +14,13 @@ class UsersTableSeeder extends Seeder
     {
         $items = [
             [
-                'name' => 'hrvoje',
-                'email' => 'admin@admin.hr',
+                'name' => 'Hrvoje',
+                'email' => 'hrcamnlz@gmail.com',
                 'password' => bcrypt('admin1708'),
                 'role' => 'admin',
-                'hash' => str_random(15),
+                'hash' => 'I1uXN5swEk6cV9l',
                 'address' => 'Donji Miholjac, CRO',
-                'company' => 'Test d.o.o.'
-            ],
-            [
-                'name' => 'guest',
-                'email' => 'user@user.hr',
-                'password' => bcrypt('user1708'),
-                'role' => 'user',
-                'hash' => str_random(15),
-                'address' => 'Cork, IE',
-                'company' => 'Guest d.o.o.'
+                'company' => ''
             ]
         ];
 
