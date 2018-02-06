@@ -15,11 +15,11 @@ class WorkExperienceTableSeeder extends Seeder
     	DB::table('work_experiences')->insert([
     		'company' => 'Gauss d.o.o.',
     		'sector' => 'IT',
-    		'address' => 'Svetog L.B.Mandića 111',
-    		'position' => 'Backend developer',
+    		'address' => 'Svetog L.B.Mandića 111o',
+    		'position' => 'PHP Backend Developer',
     		'work_from' => '23.7.2017.',
     		'work_to' => '31.1.2018.',
-    		'desc' => 'PHP s Laravel i Symfony FW',
+    		'desc' => 'PHP5/7 with Laravel/Symfony Frameworks. Experience with MySQL, MAMP/LAMP stack, API, JSON, AJAX, MCV, OOP and also UI - HTML5/CSS3, jQuery, Bootstrap, Responsive design.',
     		'currently_employed' => true
     	]);
     }

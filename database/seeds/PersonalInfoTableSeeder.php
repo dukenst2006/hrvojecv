@@ -16,7 +16,7 @@ class PersonalInfoTableSeeder extends Seeder
     		'surname' => 'Zubcic',
             'position' => 'PHP Web Developer',
             'summary' => 'lorem ipsum i tako dalje',
-            'key_skills' => 'PHP, Laravel, Symfony, MAMP/LAMP, JSON, AJAX, MySQL',
+            'key_skills' => 'PHP, Laravel, Symfony, MAMP/LAMP, JSON, AJAX, MySQL, HTML, CSS, jQuery, Bootstrap',
     		'gender' => 'M',
     		'dob' => '17.08.1991.',
     		'pob' => 'Nasice',
