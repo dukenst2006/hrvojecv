@@ -141,7 +141,7 @@ class JobController extends Controller
 
         $message = new Message();
         $message->sender_id = \Auth::id();
-        $message->reciever_id = $changeStatus->id;
+        $message->reciever_id = $changeStatus->user->id;
         $message->type = 'job';
         $message->message = 'Your job status has been changed to '.$changeStatus->status;
         $message->save();
