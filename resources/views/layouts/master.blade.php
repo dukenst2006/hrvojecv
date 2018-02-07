@@ -271,7 +271,7 @@
 
 			<div class="navbar-right">
 				<ul class="nav navbar-nav">
-					<li><a href="#">PHP: 7.1 | Laravel: 5.5 | Version: 0.1.0 Beta</a></li>
+					<li><a href="#">PHP: 7.1 | Laravel: 5.5 | Version: 1.0.0 Beta</a></li>
 				</ul>
 			</div>
 		</div>
