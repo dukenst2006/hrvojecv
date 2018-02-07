@@ -25,7 +25,7 @@ class AccessController extends Controller
         
         $validatedData = Validator::make($accessRequestData, [
             'name' => 'required|min:3|max:35',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users',
             'company' => 'required|min:3|max:50',
             'address' => 'required|min:3|max:50',
         ]);
