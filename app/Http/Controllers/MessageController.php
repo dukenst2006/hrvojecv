@@ -74,7 +74,15 @@ class MessageController extends Controller
      */
     public function showContactForm($id)
     {
-        $messages = Message::where('sender_id', $id)->where('type', 'contact')->orderBy('created_at', 'desc')->get();
+        // $messages = Message::where('sender_id', $id)->where('type', 'contact')->orderBy('created_at', 'desc')->get();
+
+        $messages = Message::where('type', 'contact')
+                            ->where(function($query) use ($userId){
+                                $query->where('sender_id', $id)
+                                        ->orWhere('reciever_id', $id);
+                                    })
+                            ->orderBy('created_at', 'desc')
+                            ->get();
 
         return view('contactPage', compact('messages'));
     }
