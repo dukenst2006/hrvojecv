@@ -18,10 +18,9 @@
 	<!-- Main navbar -->
 	<div class="navbar navbar-inverse">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="index.html"> {{ config('app.name') }} </a>
+			<a class="navbar-brand" href="{{ route('home') }}"> {{ config('app.name') }} </a>
 
 			<ul class="nav navbar-nav visible-xs-block">
-				<li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
 				<li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
 			</ul>
 		</div>
@@ -81,7 +80,7 @@
 
 		<div class="page-header-content">
 			<div class="page-title">
-				<h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Home</span> - @yield('active_page') <small>Hello, {{ \Auth::user()->name }} </small></h4>
+				<h4><a href="{{ route('home') }}"><i class="icon-arrow-left52 position-left"></i></a><span class="text-semibold">Home</span> - @yield('active_page') <small>Hello, {{ \Auth::user()->name }} </small></h4>
 			</div>
 
 			<div class="heading-elements">

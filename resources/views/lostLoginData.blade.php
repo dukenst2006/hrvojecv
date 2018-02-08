@@ -26,9 +26,9 @@
 			<div class="col-lg-6">
 				<div class="alert alert-danger" id="accessResponseAlert">
 					<p>
-						Thank you for you interest! <br> <br>
-						Unfortunately, something went wrong on my side, my sincere apologies! <br>
-						Please, <a href="mailto:hrcamnlz@gmail.com?subject=Access Request Error">contact me</a> so that I can handle this as soon as possible. <br> <br>
+						Oops! <br> <br>
+						Unfortunately, I don't recognize this credentials in my records! <br>
+						Please, <a href="mailto:hrcamnlz@gmail.com?subject=Access Request Error">contact me</a> if you think this is an error or try with another credentials. <br> <br>
 						Regards, <br>
 						Hrvoje Zubcic
 					</p>

@@ -69,9 +69,21 @@
             {{ Form::submit('Submit Request', ['class' => 'btn btn-warning form-control']) }}
         </div>
         <div class="col-lg-3"></div>
-    </div>
 
     {{ Form::close() }}
+    </div>
+    <br>
+    <div class="row" id="forgotLoginForm"> 
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <button class="form-control" id="forgotLoginBtn">Forgot your login details?</button>
+            {!! Form::open(['route' => 'lostLoginData', 'method' => 'POST' ]) !!}
+            {{ Form::email('email', null, ['class' => 'form-control', 'id' => 'forgotEmailInput', 'placeholder' => 'Enter your registered email', 'style' => 'display:none;text-align:center;']) }}
+            {{ Form::submit('Submit', ['class' => 'form-control', 'id' => 'forgotLoginSubmit', 'style' => 'display:none']) }}
+            {!! Form::close() !!}
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
 
     @if ($errors->any())
     <div class="container-fluid" id="errorDiv" style="padding-top: 3em;">
@@ -92,10 +104,44 @@
     </div>
     @endif
 
+    <div class="container-fluid" id="loginDataResponse">
+    {{-- Div for status messages after CRUD operations --}}
+    @if (Session::has('message') == 'failure')
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+                <div class="alert alert-danger">
+                    <p>
+                        Oops! <br> <br>
+                        Unfortunately, I don't recognise user by this e-mail in my records! <br>
+                        Please, <a href="mailto:hrcamnlz@gmail.com?subject=Access Request Error">contact me</a> so that I can handle this if you think this is an error or try another e-mail. <br> <br>
+                        Regards, <br>
+                        Hrvoje Zubcic
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+    @endif
+    </div>
+
     <div id="welcomeFooter">
         &copy; 2018. <a href="#" class="navbar-link">{{ $_SERVER['SERVER_NAME'] }}</a> by <a href="mailto:hrcamnlz@gmail.com" class="navbar-link">Hrvoje Zubcic</a>
     </div>
 
 </div>
 
+@endsection
+
+@section('javascripts')
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#forgotLoginBtn").on("click", function() {
+            $("#forgotEmailInput").show();
+            $("#forgotLoginSubmit").show();
+            $("#forgotLoginBtn").hide();
+        });
+        $("#loginDataResponse").fadeOut(8000);
+    });
+</script>
 @endsection

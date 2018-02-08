@@ -152,7 +152,7 @@
 		</div>
 	</div>
 
-	<div class="container">
+	<div class="container" style="padding-bottom: 10px;">
 		<table style="width: 100%;">
 			<thead>
 				<tr>
@@ -184,12 +184,12 @@
 		</table>
 	</div>
 
-	<br><br><br>
+	<br>
 	<hr>
 
 	<div class="row">
 		<div class="col-lg-12 col-md-12">
-			<h5 class="centerMe boldMe" style="margin-bottom: 0;">Education</h5>
+			<h5 class="centerMe boldMe">Education</h5>
 		</div>
 	</div>
 

@@ -70,8 +70,43 @@ class AccessController extends Controller
         return $hash;
     }
 
+
     public function sendRegistrationEmail($dataForEmail, $password)
     {
         Mail::to($dataForEmail->email)->send(new LoginDetailsEmail($dataForEmail, $password));
+    }
+
+
+    public function sendForgottenLoginData(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+                'email' => 'required|email',
+            ]);
+
+        if($validator->fails())
+        {
+            return redirect('/')->withErrors($validator);
+        }
+
+        $checkUser = User::where('email', $request->email)->first();
+
+        $dataForEmail = $checkUser;
+
+        if($checkUser == NULL)
+        {
+            Session::flash('message', 'failure');
+            return redirect('/');
+        }
+
+        $password = str_random(8);
+
+        $checkUser->password = bcrypt($password);
+        $checkUser->save();
+
+        $this->sendRegistrationEmail($dataForEmail, $password);
+
+        Session::flash('message', 'success');
+
+        return view('lostLoginData');
     }
 }

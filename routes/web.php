@@ -28,6 +28,8 @@ Route::POST('login/{hash}', 'Auth\LoginController@login');
 // REQUEST TO VIEW CV SUBMISSION ROUTE
 Route::POST('accessrequest', 'AccessController@incomingRequest')->name('access');
 
+Route::POST('lostLoginData', 'AccessController@sendForgottenLoginData')->name('lostLoginData');
+
 
 
 ////////// AUTH ROUTES //////////////

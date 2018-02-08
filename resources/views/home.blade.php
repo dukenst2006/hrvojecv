@@ -28,6 +28,7 @@
                 <p>First things first...</p>
 
                 <p>If you don't want to explore the app, but just see the CV, you can simply click on <a href="{{ route('pdfCvDownload') }}">this link</a> and get the latest PDF copy of my CV. (I update my CV in this app first, then in all the other sites)</p>
+                <p>Please note that it takes some time for PDF to start downloading. Please have a little patience until I find out what makes it so slow.</p>
                 <p>Also, all referencing links are in top-right corner of navbar (Linkedin, Twitter, Medium etc.)</p>
 
                 <h3>The CV</h3>
@@ -62,4 +63,12 @@
         </div> 
     </div>
 </div>
+@endsection
+
+@section('javascripts')
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".alert").fadeOut(2000);
+    });
+</script>
 @endsection

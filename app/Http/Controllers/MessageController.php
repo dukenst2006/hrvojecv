@@ -77,7 +77,7 @@ class MessageController extends Controller
         // $messages = Message::where('sender_id', $id)->where('type', 'contact')->orderBy('created_at', 'desc')->get();
 
         $messages = Message::where('type', 'contact')
-                            ->where(function($query) use ($userId){
+                            ->where(function($query) use ($id){
                                 $query->where('sender_id', $id)
                                         ->orWhere('reciever_id', $id);
                                     })
