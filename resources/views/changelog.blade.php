@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('active_page', 'News / Changelog')
+@section('active_page', 'Changelog')
 @section('content')
 
 @can('admin')

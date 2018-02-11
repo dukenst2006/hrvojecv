@@ -24,8 +24,8 @@
 		<div class="col-lg-4">
 			<h5>Actions</h5>
 			<a href="{{ route('projects.show', $project->id) }}" class="btn btn-xs btn-info">Show Details</a>
-			<a href="{{ route('projects.edit', $project->id) }}" class="btn btn-xs btn-success">Edit</a>
 			@can('admin')
+			<a href="{{ route('projects.edit', $project->id) }}" class="btn btn-xs btn-success">Edit</a>
 				{!! Form::open(array(
 						'style' => 'padding-top: 0.5em',
 	                    'method' => 'DELETE',

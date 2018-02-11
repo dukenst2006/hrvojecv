@@ -68,6 +68,7 @@
 				</div>
 				@endforeach
 			@endif
+			<p>No previous messages</p>
 		</div>
     </div>
 </div>
