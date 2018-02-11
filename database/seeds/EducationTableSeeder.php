@@ -19,13 +19,6 @@ class EducationTableSeeder extends Seeder
                 'period' => '2006. - 2010.',
                 'add_info' => '',
                 'accomplishments' => ''
-            ],
-            [
-                'institute' => 'POU Nova Gradiska',
-                'title' => 'Traffic techician',
-                'period' => '2015. - 2016.',
-                'add_info' => 'Professional truck driver with CODE95',
-                'accomplishments' => ''
             ]
         ];
 

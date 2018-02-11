@@ -18,9 +18,7 @@ class ChangelogController extends Controller
     public function store(Request $request)
     {
     	$validator = Validator::make($request->all(), [
-    		'title' => 'required|min:3|max:25',
-    		'desc' => 'required|min:3|max:150',
-    		'changes' => 'required|min:3|max:255'
+    		'title' => 'required|min:3|max:25'
     	]);
 
     	if($validator->fails()) {
@@ -58,9 +56,7 @@ class ChangelogController extends Controller
     public function update(Request $request, $id)
     {
     	$validator = Validator::make($request->all(), [
-    		'title' => 'required|min:3|max:25',
-    		'desc' => 'required|min:3|max:150',
-    		'changes' => 'required|min:3|max:255'
+    		'title' => 'required|min:3|max:25'
     	]);
 
     	if($validator->fails()) {

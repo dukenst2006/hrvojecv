@@ -104,7 +104,7 @@ class EducationController extends Controller
      */
     public function destroy($id)
     {
-        $eeducationDelete = Education::find($id);
+        $educationDelete = Education::find($id);
         $educationDelete->delete();
 
         return redirect()->route('education.index')->with('status', 'Education deleted!');

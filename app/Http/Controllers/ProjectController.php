@@ -75,7 +75,7 @@ class ProjectController extends Controller
             return redirect()->route('projects.index')->with('status', 'New project NOT stored!');
         }
 
-        return redirect()->route('projects.index', 'status', 'New project stored!');
+        return redirect()->route('projects.index')->with('status', 'New project stored!');
     }
 
     /**
