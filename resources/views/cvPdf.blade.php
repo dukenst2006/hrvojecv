@@ -193,32 +193,30 @@
 		</div>
 	</div>
 
-	<div class="container" style="margin-top:2em;">
-		<div class="row" style="width: 100%;">
-			<div class="col-lg-3">
-				Institute
-			</div>
-			<div class="col-lg-3">
-				Major
-			</div>
-			<div class="col-lg-3">
-				Period
-			</div>
-			<div class="col-lg-3">
-				Additional info
-			</div>
+	<div class="row">
+		<div class="col-lg-3">
+			Institute
 		</div>
-		<div class="row">
-			@foreach($data[1]['education'] as $school)
-				<div class="col-lg-3">{{ $school['institute'] }}</div>
-				<div class="col-lg-3">{{ $school['title'] }}</div>
-				<div class="col-lg-3">{{ $school['period'] }}</div>
-				@if($school['add_info'] == '')
-				<div class="col-lg-3"> - </div>
-				@endif
-				<div class="col-lg-3">{{ $school['add_info'] }}</div>
-			@endforeach
+		<div class="col-lg-3">
+			Major
 		</div>
+		<div class="col-lg-3">
+			Period
+		</div>
+		<div class="col-lg-3">
+			Additional info
+		</div>
+	</div>
+	<div class="row">
+		@foreach($data[1]['education'] as $school)
+			<div class="col-lg-3">{{ $school['institute'] }}</div>
+			<div class="col-lg-3">{{ $school['title'] }}</div>
+			<div class="col-lg-3">{{ $school['period'] }}</div>
+			@if($school['add_info'] == '')
+			<div class="col-lg-3"> - </div>
+			@endif
+			<div class="col-lg-3">{{ $school['add_info'] }}</div>
+		@endforeach
 	</div>
 
 	@if(count($data[4]['projects']) < 1)
