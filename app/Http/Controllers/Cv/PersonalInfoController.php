@@ -68,7 +68,7 @@ class PersonalInfoController extends Controller
 
         $newPersonalInfo->save();
 
-        return redirect()->route('personalinfo.index');
+        return redirect()->route('personal_info.index');
     }
 
 
@@ -119,6 +119,6 @@ class PersonalInfoController extends Controller
 
         $updatePersonalInfo->save();
 
-        return redirect()->route('personalinfo.index')->with('status', 'Personal data edited!');
+        return redirect()->route('personal_info.index')->with('status', 'Personal data edited!');
     }
 }
