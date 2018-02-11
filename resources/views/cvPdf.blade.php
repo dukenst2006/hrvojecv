@@ -194,16 +194,16 @@
 	</div>
 
 	<div class="row">
-		<div class="col-lg-3">
+		<div class="col-lg-3 col-md-3">
 			Institute
 		</div>
-		<div class="col-lg-3">
+		<div class="col-lg-3 col-md-3">
 			Major
 		</div>
-		<div class="col-lg-3">
+		<div class="col-lg-3 col-md-3">
 			Period
 		</div>
-		<div class="col-lg-3">
+		<div class="col-lg-3 col-md-3">
 			Additional info
 		</div>
 	</div>
