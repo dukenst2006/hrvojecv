@@ -14,10 +14,10 @@
 			{{ Form::text('title', null, ['class' => 'form-control', 'required' => 'required']) }}
 
 			{{ Form::label('desc', 'Description', ['class' => 'form-label']) }}
-			{{ Form::textarea('desc', null, ['class' => 'form-control', 'required' => 'required']) }}
+			{{ Form::textarea('desc', null, ['class' => 'form-control']) }}
 
 			{{ Form::label('changes', 'Changes (Separate by comma)', ['class' => 'form-label']) }}
-			{{ Form::textarea('changes', null, ['class' => 'form-control', 'required' => 'required']) }}
+			{{ Form::textarea('changes', null, ['class' => 'form-control']) }}
 
 			{{ Form::submit('Submit', ['class' => 'form-control btn btn-success']) }}
 		{!! Form::close() !!}
