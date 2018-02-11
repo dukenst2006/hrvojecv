@@ -63,7 +63,7 @@
         <div class="col-lg-6">
             {{ Form::text('name', null, ['placeholder' => 'Please enter your name', 'class' => 'form-control accessInputs', 'required' => 'required']) }}
             {{ Form::email('email', null, ['placeholder' => 'E-mail (important to enter valid e-mail address)', 'class' => 'form-control accessInputs', 'required' => 'required'])}}
-            {{ Form::text('company', null, ['placeholder' => 'Your company name (optional)', 'class' => 'form-control accessInputs', 'required' => 'required']) }}
+            {{ Form::text('company', null, ['placeholder' => 'Your company name (optional)', 'class' => 'form-control accessInputs']) }}
             {{ Form::text('address', null, ['placeholder' => 'Address', 'class' => 'form-control accessInputs', 'required' => 'required']) }}
 
             {{ Form::submit('Submit Request', ['class' => 'btn btn-warning form-control']) }}

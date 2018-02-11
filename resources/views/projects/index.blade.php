@@ -36,6 +36,7 @@
 			@endcan
 		</div>
 	</div>
+	<hr>
 	@endforeach
 @else
 <p style="font-size: 10em;text-align: center;-webkit-transform: rotate(90deg);">:(</p>

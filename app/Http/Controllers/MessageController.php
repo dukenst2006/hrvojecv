@@ -15,6 +15,7 @@ class MessageController extends Controller
      */
     public function jobMessages($userId, $type)
     {
+        // Find messages in job postings, display all messages between job poster and admin
         $messages = Message::where('type', $type)
                             ->where(function($query) use ($userId){
                                 $query->where('sender_id', $userId)
@@ -30,10 +31,11 @@ class MessageController extends Controller
      * STORE ADMIN JOB MESSAGE
      * @param  Request $request 
      * @param  $id
-     * @return response
+     * @return redirect
      */
     public function storeAdminJobMessage(Request $request, $id)
     {
+        // function to store admin messages in DB
         $myRole = 'admin';
         $myId = User::where('role', $myRole)->pluck('id')->get(0);
 
@@ -55,6 +57,7 @@ class MessageController extends Controller
      */
     public function storeJobMessage(Request $request, $id)
     {
+        // function to stor
         $myRole = 'admin';
         $myId = User::where('role', $myRole)->pluck('id')->get(0);
 
@@ -76,6 +79,7 @@ class MessageController extends Controller
     {
         // $messages = Message::where('sender_id', $id)->where('type', 'contact')->orderBy('created_at', 'desc')->get();
 
+        // Show messages in contact page only between logged user and Admin
         $messages = Message::where('type', 'contact')
                             ->where(function($query) use ($id){
                                 $query->where('sender_id', $id)
