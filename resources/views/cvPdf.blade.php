@@ -107,32 +107,32 @@
 	</div>
 
 	<div class="row centerMe boldMe">
-		<div class="col-lg-3 col-md-3">
+		<div class="col-xs-3 col-md-3">
 			Language
 		</div>
-		<div class="col-lg-3 col-md-3">
+		<div class="col-xs-3 col-md-3">
 			Understanding
 		</div>
-		<div class="col-lg-3 col-md-3">
+		<div class="col-xs-3 col-md-3">
 			Speach
 		</div>
-		<div class="col-lg-3 col-md-3">
+		<div class="col-xs-3 col-md-3">
 			Writing
 		</div>
 	</div>
 
 	@foreach($data[3]['language'] as $lang)
 	<div class="row centerMe">
-		<div class="col-lg-3 col-md-3 boldMe">
+		<div class="col-xs-3 col-md-3 boldMe">
 			{{ $lang['title'] }}
 		</div>
-		<div class="col-lg-3 col-md-3">
+		<div class="col-xs-3 col-md-3">
 			{{ $lang['understanding'] }}
 		</div>
-		<div class="col-lg-3 col-md-3">
+		<div class="col-xs-3 col-md-3">
 			{{ $lang['speach'] }}
 		</div>
-		<div class="col-lg-3 col-md-3">
+		<div class="col-xs-3 col-md-3">
 			{{ $lang['writing'] }}
 		</div>
 	</div>
