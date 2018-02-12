@@ -50,8 +50,8 @@
 </style>
         
 <div class="welcome">
-    <span class="icon-arrow-down5" id="arrowDown"></span>
-    <span class="icon-arrow-down5" id="arrowDown2"></span>
+    <a href="#accessTitle" class="icon-arrow-down5" id="arrowDown"></a>
+    <a href="#accessTitle" class="icon-arrow-down5" id="arrowDown2"></a>
 </div>
 
 <div class="container-fluid" id="guestFormData">
@@ -142,6 +142,11 @@
             $("#forgotLoginBtn").hide();
         });
         $("#loginDataResponse").fadeOut(8000);
+        $(".icon-arrow-down5").on("click", function() {
+            $('html, body').animate({
+                scrollTop: ($('#accessTitle').offset().top)
+            },500);
+        });
     });
 </script>
 @endsection
