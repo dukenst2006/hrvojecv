@@ -152,37 +152,52 @@
 		</div>
 	</div>
 
-	<div class="container" style="padding-bottom: 10px;">
-		<table style="width: 100%;">
-			<thead>
-				<tr>
-					<th>Company</th>
-					<th>Sector</th>
-					<th>Address</th>
-					<th>Position</th>
-					<th>Worked from</th>
-					<th>Worked till</th>
-					<th>More details</th>
-				</tr>
-			</thead>
-			<tbody>
-				@foreach($data[2]['workExperience'] as $job)
-				<tr>
-					<td>{{ $job['company'] }}</td>
-					<td>{{ $job['sector'] }}</td>
-					<td>{{ $job['address'] }}</td>
-					<td>{{ $job['position'] }}</td>
-					<td>{{ $job['work_from'] }}</td>
-					@if($job['work_to'] == '')
-					<td>Currently employed</td>
-					@endif
-					<td>{{ $job['work_to'] }}</td>
-					<td>{{ $job['desc'] }}</td>
-				</tr>
-				@endforeach
-			</tbody>
-		</table>
+	<div class="row">
+		<div class="col-xs-2">
+			Company
+		</div>
+		<div class="col-xs-2">
+			Address
+		</div>
+		<div class="col-xs-2">
+			Position
+		</div>
+		<div class="col-xs-2">
+			Work from
+		</div>
+		<div class="col-xs-2">
+			Work to
+		</div>
+		<div class="col-xs-2">
+			More Details
+		</div>
 	</div>
+					
+	@foreach($data[2]['workExperience'] as $job)
+	<div class="row">
+		<div class="col-xs-2">
+			{{ $job['company'] }}
+		</div>
+		<div class="col-xs-2">
+			{{ $job['address'] }}
+		</div>
+		<div class="col-xs-2">
+			{{ $job['position'] }}
+		</div>
+		<div class="col-xs-2">
+			{{ $job['work_from'] }}
+		</div>
+		@if($job['work_to'] == '')
+		<div class="col-xs-2">Currently employed</div>
+		@endif
+		<div class="col-xs-2">
+			{{ $job['work_to'] }}
+		</div>
+		<div class="col-xs-2">
+			{{ $job['desc'] }}
+		</div>
+	</div>
+	@endforeach
 
 	<br>
 	<hr>
@@ -220,47 +235,66 @@
 	</div>
 
 	@if(count($data[4]['projects']) < 1)
+	
 	@else
 
-	<br>
-	<hr>
+		<br>
+		<hr>
 
-	<div class="row">
-		<div class="col-lg-12 col-md-12">
-			<h5 class="centerMe boldMe" style="margin-bottom: 0;">Projects</h5>
+		<div class="row">
+			<div class="col-lg-12 col-md-12">
+				<h5 class="centerMe boldMe" style="margin-bottom: 0;">Projects</h5>
+			</div>
 		</div>
-	</div>
 
-	<div class="container" style="margin-top:2em;">
-		<table style="width: 100%;">
-			<thead>
-				<tr>
-					<th>Name</th>
-					<th>Type</th>
-					@if($data[4]['projects'][0]['type'] == 'corporate')
-					<th>Company</th>
-					@endif
-					<th>URL</th>
-					<th>Technology</th>
-					<th>Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				@foreach($data[4]['projects'] as $project)
-				<tr>
-					<td>{{ $project['name'] }}</td>
-					<td>{{ $project['type'] }}</td>
-					@if($project['type'] == 'corporate')
-					<td>{{ $project['company'] }}</td>
-					@endif
-					<td>{{ $project['url'] }}</td>
-					<td>{{ $project['technology'] }}</td>
-					<td>{{ $project['description'] }}</td>
-				</tr>
-				@endforeach
-			</tbody>
-		</table>
-	</div>
+		<div class="row">
+			<div class="col-xs-2">
+				Name
+			</div>
+			<div class="col-xs-2">
+				Type
+			</div>
+			<div class="col-xs-2">
+				Company
+			</div>
+			<div class="col-xs-2">
+				URL
+			</div>
+			<div class="col-xs-2">
+				Technology
+			</div>
+			<div class="col-xs-2">
+				Description
+			</div>
+		</div>
+		@foreach($data[4]['projects'] as $project)
+		<div class="row">
+			<div class="col-xs-2">
+				{{ $project['name'] }}
+			</div>
+			<div class="col-xs-2">
+				{{ $project['type'] }}
+			</div>
+			@if($project['type'] == 'corporate')
+			<div class="col-xs-2">
+				{{ $project['company'] }}
+			</div>
+			@else
+			<div class="col-xs-2">
+				-
+			</div>
+			@endif
+			<div class="col-xs-2">
+				{{ $project['url'] }}
+			</div>
+			<div class="col-xs-2">
+				{{ $project['technology'] }}
+			</div>
+			<div class="col-xs-2">
+				{{ $project['description'] }}
+			</div>
+		</div>
+		@endforeach
 	@endif
 
 	<br><br><br><br>
