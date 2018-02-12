@@ -16,6 +16,7 @@
 		<div class="col-lg-4"><h5><img src="{{asset('images/nologo.png')}}" alt="No logo" /></h5></div>
 		@else
 		<div class="col-lg-4"><h5><img src="{{asset('project_logos/'. $project->logo)}}" alt="No logo" /></h5></div>
+		@endif
 		<div class="col-lg-4">
 			<h4>{{ $project->name }}</h4>
 			<a href="{{ $project->url }}" target="_blank">{{ $project->url }}</a>
