@@ -52,7 +52,7 @@
 
 	<div class="row">
 		<div class="col-lg-12 centerMe boldMe" style="font-size:1.5em;padding-top: 12px;">
-			<span>@{{ {{ $data[0]['personalInfo'][0]['position'] }} }}</span>
+			<span>{{ $data[0]['personalInfo'][0]['position'] }}</span>
 		</div>
 	</div>
 	<div class="row">
@@ -101,13 +101,13 @@
 	<br>
 	<hr>
 
-	<div class="row" style="padding-top: 2em;">
+	<div class="row">
 		<div class="col-lg-12 col-md-12">
 			<h5 class="centerMe boldMe">Languages</h5>
 		</div>
 	</div>
 
-	<div class="row centerMe boldMe">
+	<div class="row centerMe boldMe" style="padding-top: 2em;">
 		<div class="col-xs-3">
 			Language
 		</div>
@@ -203,13 +203,13 @@
 	<br>
 	<hr>
 
-	<div class="row" style="padding-top: 2em;">
+	<div class="row">
 		<div class="col-lg-12 col-md-12">
 			<h5 class="centerMe boldMe">Education</h5>
 		</div>
 	</div>
 
-	<div class="row boldMe">
+	<div class="row boldMe" style="padding-top: 2em;">
 		<div class="col-xs-3 col-md-3">
 			Institute
 		</div>
@@ -244,13 +244,13 @@
 		<br>
 		<hr>
 
-		<div class="row" style="padding-top: 2em;">
+		<div class="row">
 			<div class="col-lg-12 col-md-12">
 				<h5 class="centerMe boldMe" style="margin-bottom: 0;">Projects</h5>
 			</div>
 		</div>
 
-		<div class="row boldMe">
+		<div class="row boldMe" style="padding-top: 2em;">
 			<div class="col-xs-2">
 				Name
 			</div>
