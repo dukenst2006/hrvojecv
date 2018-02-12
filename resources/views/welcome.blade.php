@@ -42,7 +42,10 @@
     }
     #accessTitle {
         padding-top: 2em;
+    }
+    #accessParag {
         padding-bottom: 2em;
+        color: #FF5722;
     }
     #welcomeFooter {
         margin-top: 5em;
@@ -56,6 +59,7 @@
 
 <div class="container-fluid" id="guestFormData">
     <h3 id="accessTitle">Request access to CV</h3>
+    <p id="accessParag">Registration is super-easy and FREE. <br> Sign up to get permanent full access.</p>
     <div class="row">
     {{ Form::open(['route' => 'access', 'method' => 'POST'])}}
 
