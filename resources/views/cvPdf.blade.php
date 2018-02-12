@@ -174,7 +174,7 @@
 	</div>
 					
 	@foreach($data[2]['workExperience'] as $job)
-	<div class="row">
+	<div class="row" style="padding-top:2em;">
 		<div class="col-xs-2">
 			{{ $job['company'] }}
 		</div>
@@ -270,7 +270,7 @@
 			</div>
 		</div>
 		@foreach($data[4]['projects'] as $project)
-		<div class="row">
+		<div class="row" style="padding-top: 2em;">
 			<div class="col-xs-2">
 				{{ $project['name'] }}
 			</div>
