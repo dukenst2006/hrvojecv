@@ -222,17 +222,19 @@
 			Additional info
 		</div>
 	</div>
+	@foreach($data[1]['education'] as $school)
 	<div class="row">
-		@foreach($data[1]['education'] as $school)
-			<div class="col-xs-3">{{ $school['institute'] }}</div>
-			<div class="col-xs-3">{{ $school['title'] }}</div>
-			<div class="col-xs-3">{{ $school['period'] }}</div>
-			@if($school['add_info'] == '')
-			<div class="col-xs-3"> - </div>
-			@endif
-			<div class="col-xs-3">{{ $school['add_info'] }}</div>
-		@endforeach
+		<div class="col-xs-3">{{ $school['institute'] }}</div>
+		<div class="col-xs-3">{{ $school['title'] }}</div>
+		<div class="col-xs-3">{{ $school['period'] }}</div>
+		@if($school['add_info'] == '')
+		<div class="col-xs-3"> - </div>
+		@endif
+		<div class="col-xs-3">{{ $school['add_info'] }}</div>
 	</div>
+	@endforeach
+
+	<div style="page-break-after: always;"></div>
 
 	@if(count($data[4]['projects']) < 1)
 	
