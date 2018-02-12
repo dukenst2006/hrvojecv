@@ -194,28 +194,28 @@
 	</div>
 
 	<div class="row">
-		<div class="col-lg-3 col-md-3">
+		<div class="col-xs-3 col-md-3">
 			Institute
 		</div>
-		<div class="col-lg-3 col-md-3">
+		<div class="col-xs-3 col-md-3">
 			Major
 		</div>
-		<div class="col-lg-3 col-md-3">
+		<div class="col-xs-3 col-md-3">
 			Period
 		</div>
-		<div class="col-lg-3 col-md-3">
+		<div class="col-xs-3 col-md-3">
 			Additional info
 		</div>
 	</div>
 	<div class="row">
 		@foreach($data[1]['education'] as $school)
-			<div class="col-lg-3">{{ $school['institute'] }}</div>
-			<div class="col-lg-3">{{ $school['title'] }}</div>
-			<div class="col-lg-3">{{ $school['period'] }}</div>
+			<div class="col-xs-3">{{ $school['institute'] }}</div>
+			<div class="col-xs-3">{{ $school['title'] }}</div>
+			<div class="col-xs-3">{{ $school['period'] }}</div>
 			@if($school['add_info'] == '')
-			<div class="col-lg-3"> - </div>
+			<div class="col-xs-3"> - </div>
 			@endif
-			<div class="col-lg-3">{{ $school['add_info'] }}</div>
+			<div class="col-xs-3">{{ $school['add_info'] }}</div>
 		@endforeach
 	</div>
 
