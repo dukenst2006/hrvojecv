@@ -13,7 +13,7 @@
 	@foreach($projects as $project)
 	<div class="row">
 		@if($project->logo == '')
-		<div class="col-lg-4"><h5><img src="{{asset('images/nologo.png')}}" alt="No logo" /></h5></div>
+		<div class="col-lg-4"><h5><img src="{{asset('images/nologo.png')}}" alt="No logo" style="max-height: 300px; max-width: 460px;" /></h5></div>
 		@else
 		<div class="col-lg-4"><h5><img src="{{asset('project_logos/'. $project->logo)}}" alt="No logo" /></h5></div>
 		@endif
