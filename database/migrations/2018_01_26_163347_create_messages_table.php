@@ -19,7 +19,7 @@ class CreateMessagesTable extends Migration
             $table->foreign('sender_id')->references('id')->on('users');
             $table->integer('reciever_id')->unsigned();
             $table->foreign('reciever_id')->references('id')->on('users');
-            $table->string('message')->nullable();
+            $table->string('message', 500)->nullable();
             $table->string('subject')->nullable();
             $table->string('type')->nullable();
             $table->timestamps();

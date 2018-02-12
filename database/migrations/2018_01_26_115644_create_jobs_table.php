@@ -21,15 +21,15 @@ class CreateJobsTable extends Migration
             $table->string('mainLanguage')->nullable();
             $table->string('requiredFw')->nullable();
             $table->string('desiredSkills')->nullable();
-            $table->string('desiredAdditional')->nullable();
+            $table->string('desiredAdditional', 1001)->nullable();
             $table->string('yearsExp')->nullable();
-            $table->string('description')->nullable();
+            $table->string('description', 1001)->nullable();
             $table->string('contract')->nullable();
             $table->string('salaryRange')->nullable();
             $table->string('exactSalary')->nullable();
             $table->string('remote')->nullable();
             $table->string('location')->nullable();
-            $table->string('benefits')->nullable();
+            $table->string('benefits', 500)->nullable();
             $table->string('status')->nullable();
             $table->timestamps();
         });

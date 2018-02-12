@@ -20,7 +20,7 @@ class CreateProjectsTable extends Migration
             $table->string('company')->nullable();
             $table->string('url')->nullable();
             $table->string('technology')->nullable();
-            $table->string('description')->nullable();
+            $table->string('description', 1001)->nullable();
             $table->string('logo')->nullable();
             $table->timestamps();
         });

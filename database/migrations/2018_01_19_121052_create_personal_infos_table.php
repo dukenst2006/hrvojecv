@@ -18,7 +18,7 @@ class CreatePersonalInfosTable extends Migration
             $table->string('name')->nullable();
             $table->string('surname')->nullable();
             $table->string('position')->nullable();
-            $table->string('summary')->nullable();
+            $table->string('summary', 1001)->nullable();
             $table->string('gender')->nullable();
             $table->string('dob')->nullable();
             $table->string('pob')->nullable();
