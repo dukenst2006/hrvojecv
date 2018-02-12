@@ -101,7 +101,7 @@
 	<br>
 	<hr>
 
-	<div class="row">
+	<div class="row" style="padding-top: 2em;">
 		<div class="col-lg-12 col-md-12">
 			<h5 class="centerMe boldMe">Languages</h5>
 		</div>
@@ -203,7 +203,7 @@
 	<br>
 	<hr>
 
-	<div class="row">
+	<div class="row" style="padding-top: 2em;">
 		<div class="col-lg-12 col-md-12">
 			<h5 class="centerMe boldMe">Education</h5>
 		</div>
@@ -244,7 +244,7 @@
 		<br>
 		<hr>
 
-		<div class="row">
+		<div class="row" style="padding-top: 2em;">
 			<div class="col-lg-12 col-md-12">
 				<h5 class="centerMe boldMe" style="margin-bottom: 0;">Projects</h5>
 			</div>
