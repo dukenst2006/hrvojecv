@@ -52,11 +52,11 @@
 
 	<div class="row">
 		<div class="col-lg-12 centerMe boldMe" style="font-size:1.5em;padding-top: 12px;">
-			<span>@{!! {{ $data[0]['personalInfo'][0]['position'] }} !!}</span>
+			<span>@{{ {{ $data[0]['personalInfo'][0]['position'] }} }}</span>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-lg-12 centerMe boldMe"padding-bottom: 12px;">
+		<div class="col-lg-12 centerMe boldMe" style="padding-bottom: 12px;">
 			<span>Key skills: {{ $data[0]['personalInfo'][0]['key_skills'] }}</span>
 		</div>
 	</div>
@@ -77,8 +77,9 @@
 			<strong>Gender:</strong> <span>{{ $data[0]['personalInfo'][0]['gender'] }}</span> |
 			<strong>Nationality:</strong> <span>{{ $data[0]['personalInfo'][0]['nationality'] }}</span> <br>
 			<strong>Address:</strong> <span>{{ $data[0]['personalInfo'][0]['house_no'] }} {{ $data[0]['personalInfo'][0]['street'] }}, {{ $data[0]['personalInfo'][0]['current_residence'] }}, {{ $data[0]['personalInfo'][0]['state'] }}</span> |
-			<strong>Mobile:</strong> <span>0976622218</span> <br>
-			<strong>E-mail/Skype:</strong> <span>hrcamnlz@gmail.com</span>
+			<strong>Mobile:</strong> <span>{{ $data[0]['personalInfo'][0]['mob'] }}</span> <br>
+			<strong>Skype:</strong> <span>{{ $data[0]['personalInfo'][0]['skype'] }}</span>
+			<strong>E-mail</strong> <span>{{ $data[0]['personalInfo'][0]['email'] }}</span>
 		</div>
 	</div>
 
@@ -107,16 +108,16 @@
 	</div>
 
 	<div class="row centerMe boldMe">
-		<div class="col-xs-3 col-md-3">
+		<div class="col-xs-3">
 			Language
 		</div>
-		<div class="col-xs-3 col-md-3">
+		<div class="col-xs-3">
 			Understanding
 		</div>
-		<div class="col-xs-3 col-md-3">
+		<div class="col-xs-3">
 			Speach
 		</div>
-		<div class="col-xs-3 col-md-3">
+		<div class="col-xs-3">
 			Writing
 		</div>
 	</div>
@@ -152,7 +153,7 @@
 		</div>
 	</div>
 
-	<div class="row">
+	<div class="row boldMe">
 		<div class="col-xs-2">
 			Company
 		</div>
@@ -208,7 +209,7 @@
 		</div>
 	</div>
 
-	<div class="row">
+	<div class="row boldMe">
 		<div class="col-xs-3 col-md-3">
 			Institute
 		</div>
@@ -249,7 +250,7 @@
 			</div>
 		</div>
 
-		<div class="row">
+		<div class="row boldMe">
 			<div class="col-xs-2">
 				Name
 			</div>
@@ -305,8 +306,7 @@
 	<div class="container centerMe" style="padding-top:15px;">
 		<span class="centerMe">CV template Copyright @ Hrvoje Zubcic</span>
 	</div>
-
-
+</div>
 </div>
 
 
