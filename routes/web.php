@@ -16,11 +16,6 @@ Route::GET('/', function () {
     return view('welcome');
 });
 
-// INDEX PAGE
-Route::GET('/test', function () {
-    return view('carousel');
-});
-
 // LOGIN ROUTE
 Route::GET('login/{hash}', 'Auth\LoginController@showLoginForm')->name('login');
 Route::POST('login/{hash}', 'Auth\LoginController@login');
