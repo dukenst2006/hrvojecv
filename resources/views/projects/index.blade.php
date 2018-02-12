@@ -12,6 +12,9 @@
 @if (count($projects) > 0)
 	@foreach($projects as $project)
 	<div class="row">
+		@if($project->logo == '')
+		<div class="col-lg-4"><h5><img src="{{asset('images/nologo.png')}}" alt="No logo" /></h5></div>
+		@else
 		<div class="col-lg-4"><h5><img src="{{asset('project_logos/'. $project->logo)}}" alt="No logo" /></h5></div>
 		<div class="col-lg-4">
 			<h4>{{ $project->name }}</h4>
