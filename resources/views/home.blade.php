@@ -31,6 +31,8 @@
                 <p>Please note that it takes some time for PDF to start downloading. Please have a little patience until I find out what makes it so slow.</p>
                 <p>Also, all referencing links are in top-right corner of navbar (Linkedin, Twitter, Medium etc.)</p>
 
+                <p>You can find out what kind of a job I'm looking for by navigating <a href="{{ route('looking_for.index') }}">HERE</a></p>
+
                 <h3>The CV</h3>
 
                 <p>You can check all the newest information about my personal information, work experience, projects etc. by clicking on the corresponding menu item in the left navbar. (section "Curriculum Vitae")</p>
