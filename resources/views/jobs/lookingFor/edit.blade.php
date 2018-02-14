@@ -27,7 +27,7 @@
     <div class="panel-body">
         {!! Form::open(['route' => ['looking_for.update', $lookingFor->id], 'method' => 'PUT']) !!}
 			{{ Form::label('description', 'Description',['class' => 'form-label']) }}
-			{{ Form::textarea('description', $lookingFor->desc, ['class' => 'form-control', 'id' => 'descInput']) }}
+			{{ Form::textarea('description', $lookingFor->desc."\n", ['class' => 'form-control', 'id' => 'descInput', 'style' => 'white-space: pre-line;']) }}
 			{{ Form::submit('Submit', ['class' => 'form-control btn btn-success']) }}
         {!! Form::close() !!}
     </div>

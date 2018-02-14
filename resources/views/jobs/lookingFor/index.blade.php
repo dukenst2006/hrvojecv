@@ -16,8 +16,8 @@
         @endcan
     </div>
 
-    <div class="panel-body">
-        {{ $lookingFor[0]->desc }}
+    <div class="panel-body" style="white-space: pre-line;">
+        {{ $lookingFor[0]->desc."\n" }}
     </div>
 </div>
 
