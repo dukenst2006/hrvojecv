@@ -61,6 +61,8 @@ Route::group(['prefix' => 'cv', 'middleware' => 'auth'], function() {
 
     // JOB ROUTES
     Route::resource('job_offer', 'JobController');
+    // LOOKING FOR ROUTES
+    Route::resource('looking_for', 'LookingForController', ['except' => 'show', 'destroy']);
 
     // SHOW USER POSTED JOB
     Route::GET('job_offer/{id}/show', 'JobController@userJobShow')->name('userJobShow');

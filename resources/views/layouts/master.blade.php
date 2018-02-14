@@ -164,6 +164,7 @@
 										<li><a href="{{ route('language.create') }}">Language</a></li>
 										<li><a href="{{ route('education.create') }}">Education</a></li>
 										<li><a href="{{ route('files.create') }}">Source file/Screenshot</a></li>
+										<li><a href="{{ route('looking_for.create') }}">Looking For</a></li>
 									</ul>
 								</li>
 
@@ -223,6 +224,7 @@
 								<li>
 									<a href="#"><i class="icon-unfold"></i> <span>Job</span></a>
 									<ul>
+										<li><a href="{{ route('looking_for.index') }}">I'm looking for...</a></li>
 										<li><a href="{{ route('job_offer.create') }}">Place/View job offer</a></li>
 									</ul>
 								</li>
