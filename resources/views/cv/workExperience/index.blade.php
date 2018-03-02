@@ -31,7 +31,7 @@
 
 
 	@foreach($allJobs as $job)
-		<table class="table table-responsive table-hover" style="padding-bottom: 3em;">
+		<table class="table table-responsive table-hover" style="margin-bottom: 5em;">
 			<tbody>
 				<tr>
 					<td class="tableHeadRad">Company name</td>
@@ -82,8 +82,6 @@
 			</tbody>
 		</table>
 	@endforeach
-
-	<hr>
 
 @endif
 
