@@ -21,7 +21,7 @@ class WorkExperienceController extends Controller
      */
     public function index()
     {
-        $allJobs = WorkExperience::all()->sortBy('work_from');
+        $allJobs = WorkExperience::all()->sortByDesc('work_from');
 
         return view('cv.workExperience.index', compact('allJobs'));
     }
