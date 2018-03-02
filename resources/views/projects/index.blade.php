@@ -19,7 +19,11 @@
 		@endif
 		<div class="col-lg-4">
 			<h4>{{ $project->name }}</h4>
+			@if($project->url == '')
+			<a href="#">Not yet available</a>
+			@else
 			<a href="http://{{ $project->url }}" target="_blank">{{ $project->url }}</a>
+			@endif
 			<h5>Technologies used:</h5>
 			<p>{{ $project->technology }}</p>
 			<h5>Description</h5>
