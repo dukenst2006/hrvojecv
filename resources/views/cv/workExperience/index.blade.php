@@ -83,6 +83,8 @@
 		</table>
 	@endforeach
 
+	<hr>
+
 @endif
 
 

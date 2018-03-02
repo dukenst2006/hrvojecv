@@ -19,7 +19,7 @@
 		@endif
 		<div class="col-lg-4">
 			<h4>{{ $project->name }}</h4>
-			<a href="{{ $project->url }}" target="_blank">{{ $project->url }}</a>
+			<a href="{{ url($project->url) }}" target="_blank">{{ $project->url }}</a>
 			<h5>Technologies used:</h5>
 			<p>{{ $project->technology }}</p>
 			<h5>Description</h5>
