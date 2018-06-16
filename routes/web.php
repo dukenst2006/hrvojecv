@@ -33,7 +33,7 @@ Route::group(['prefix' => 'cv', 'middleware' => 'auth'], function() {
 
     // DASHBOARD INDEX ROUTE
 	Route::GET('/', 'HomeController@index')->name('home');
-	
+
 	// LOGOUT ROUTE
     Route::POST('logout', 'Auth\LoginController@logout')->name('logout');
 
@@ -101,8 +101,5 @@ Route::group(['prefix' => 'cv', 'middleware' => 'auth'], function() {
 
     // CHANGELOG
     Route::resource('changelog', 'ChangelogController');
-
-    
-
 
 });

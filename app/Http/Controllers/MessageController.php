@@ -10,7 +10,7 @@ class MessageController extends Controller
 {
     /**
      * GET ALL USER-TO-USER JOB MESSAGES
-     * @param  $id 
+     * @param  $id
      * @return $messages
      */
     public function jobMessages($userId, $type)
@@ -29,9 +29,10 @@ class MessageController extends Controller
 
     /**
      * STORE ADMIN JOB MESSAGE
-     * @param  Request $request 
+     *
+     * @param  Request $request
      * @param  $id
-     * @return redirect
+     * @return \Illuminate\Http\Redirect
      */
     public function storeAdminJobMessage(Request $request, $id)
     {
@@ -51,9 +52,10 @@ class MessageController extends Controller
 
     /**
      * STORE USER JOB MESSAGE
-     * @param  Request $request 
-     * @param  $id
-     * @return response
+     *
+     * @param  Request $request
+     * @param  int $id
+     * @return \Illuminate\Http\Response
      */
     public function storeJobMessage(Request $request, $id)
     {
@@ -73,12 +75,12 @@ class MessageController extends Controller
 
     /**
      *  SHOW CONTACT PAGE WITH MESSAGE HISTORY
-     * @return response
+     *
+     * @param  int $id
+     * @return \Illuminate\Http\Response
      */
     public function showContactForm($id)
     {
-        // $messages = Message::where('sender_id', $id)->where('type', 'contact')->orderBy('created_at', 'desc')->get();
-
         // Show messages in contact page only between logged user and Admin
         $messages = Message::where('type', 'contact')
                             ->where(function($query) use ($id){
@@ -94,9 +96,9 @@ class MessageController extends Controller
 
     /**
      * STORE MESSAGE FROM CONTACT FORM
-     * @param  $id
-     * @param Request $request 
-     * @return Response
+     * @param  int $id
+     * @param Request $request
+     * @return \Illuminate\Http\Response
      */
     public function store(Request $request, $id)
     {
@@ -117,7 +119,8 @@ class MessageController extends Controller
 
     /**
      * ADMIN INDEX CONTACT MESSAGES
-     * @return response
+     *
+     * @return \Illuminate\Http\Response
      */
     public function adminIndex()
     {
@@ -129,8 +132,9 @@ class MessageController extends Controller
 
     /**
      * ADMIN SEND MESSAGE
-     * @param  Request $requst 
-     * @return redirect
+     *
+     * @param  Request $requst
+     * @return \Illuminate\Http\Redirect
      */
     public function adminSend(Request $request)
     {

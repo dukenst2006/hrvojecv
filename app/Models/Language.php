@@ -1,18 +1,19 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Education extends Model
+class Language extends Model
 {
+    public $timestamps = false;
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'institution', 'title', 'period', 'add_info', 'accomplishments', 'created_at', 'updated_at'
+        'title', 'writing', 'speach', 'understanding'
     ];
 
     /**

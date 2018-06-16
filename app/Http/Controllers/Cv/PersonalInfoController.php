@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Cv;
 
 use App\Http\Controllers\Controller;
-use App\PersonalInfo;
+use App\Models\PersonalInfo;
 use Illuminate\Http\Request;
 
 class PersonalInfoController extends Controller

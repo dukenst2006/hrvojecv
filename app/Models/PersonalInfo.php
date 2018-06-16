@@ -1,10 +1,10 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Language extends Model
+class PersonalInfo extends Model
 {
     public $timestamps = false;
     /**
@@ -13,7 +13,7 @@ class Language extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'writing', 'speach', 'understanding'
+        'name', 'surname', 'gender', 'dob', 'pob', 'street', 'house_no', 'postcode', 'state', 'tel', 'mob', 'email', 'skype', 'nationality', 'current_residence', 'position', 'summary', 'key_skills'
     ];
 
     /**

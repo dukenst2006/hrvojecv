@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Cv;
 
 use App\Http\Controllers\Controller;
-use App\WorkExperience;
+use App\Models\WorkExperience;
 use Illuminate\Http\Request;
 
 class WorkExperienceController extends Controller

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Access;
+use App\Models\Access;
 use App\Mail\LoginDetailsEmail;
-use App\User;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\View;
 class AccessController extends Controller
 {
     /**
-     * Intercept incoming request and handle it. If success, store new user and 
+     * Intercept incoming request and handle it. If success, store new user and
      * send him email with login details
      *
      * @return \Illuminate\Http\Response
@@ -22,7 +22,7 @@ class AccessController extends Controller
     public function incomingRequest(Request $request)
     {
         $accessRequestData = $request->all();
-        
+
         $validatedData = Validator::make($accessRequestData, [
             'name' => 'required|min:3|max:35',
             'email' => 'required|email|unique:users',
@@ -58,8 +58,14 @@ class AccessController extends Controller
 
     }
 
+    /**
+     *  Give each user unique hash string for the login
+     *
+     * @return var $hash
+     */
     public static function giveHash()
     {
+        // toggle new hash if generated exists
         do{
             $hash = md5(str_random(20));
             $compareHash = User::where('hash', $hash)->count();
@@ -69,15 +75,30 @@ class AccessController extends Controller
         return $hash;
     }
 
-
+    /**
+     *  Send newly registered user email with login credentials
+     *  Note: Resolve this the proper way!
+     *
+     * @param  $dataForEmail
+     * @param  $password
+     * @return HTTP_STATUS_CODE
+     */
     public function sendRegistrationEmail($dataForEmail, $password)
     {
         Mail::to($dataForEmail->email)->send(new LoginDetailsEmail($dataForEmail, $password));
+
+        return 200;
     }
 
-
+    /**
+     *  Send "forgotten login details" email
+     *
+     * @param  Request $request
+     * @return \Illuminate\Http\Response
+     */
     public function sendForgottenLoginData(Request $request)
     {
+        // Validate entered email
         $validator = Validator::make($request->all(), [
                 'email' => 'required|email',
             ]);
@@ -87,21 +108,24 @@ class AccessController extends Controller
             return redirect('/')->withErrors($validator);
         }
 
-        $checkUser = User::where('email', $request->email)->first();
+        // querry user if found by email
+        $dataForEmail = User::where('email', $request->email)->first();
 
-        $dataForEmail = $checkUser;
-
-        if($checkUser == NULL)
+        // if querry returns no data, return fail
+        if($dataForEmail == NULL)
         {
             Session::flash('message', 'failure');
             return redirect('/');
         }
 
+        // Generate new password
         $password = str_random(8);
 
-        $checkUser->password = bcrypt($password);
-        $checkUser->save();
+        // store new password
+        $dataForEmail->password = bcrypt($password);
+        $dataForEmail->save();
 
+        // Send email with the new data
         $this->sendRegistrationEmail($dataForEmail, $password);
 
         Session::flash('message', 'success');

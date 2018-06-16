@@ -67,9 +67,10 @@ class UserController extends Controller
     }
 
     /**
-     * 
-     * @param  Request $request 
-     * @param  $id     
+     * Change Authed user password
+     *
+     * @param  Request $request
+     * @param  $id
      * @return \Illuminate\Http\Response
      */
     public function changePassword(Request $request, $id)

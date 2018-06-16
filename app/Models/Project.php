@@ -1,10 +1,10 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Changelog extends Model
+class Project extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -12,7 +12,7 @@ class Changelog extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'description', 'changes'
+        'projectName', 'type', 'company', 'url', 'technology' ,'desc'
     ];
 
     /**

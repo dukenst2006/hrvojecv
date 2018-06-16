@@ -26,7 +26,7 @@ class LoginDetailsEmail extends Mailable
     }
 
     /**
-     * Build the message.
+     * Send newly registered user email with login details
      *
      * @return $this
      */

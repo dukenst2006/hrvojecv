@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Cv;
 
 use App\Http\Controllers\Controller;
-use App\Language;
+use App\Models\Language;
 use Illuminate\Http\Request;
 
 class LanguageController extends Controller
@@ -63,7 +63,7 @@ class LanguageController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * 
+     *
      * @param $id
      * @return \Illuminate\Http\Response
      */

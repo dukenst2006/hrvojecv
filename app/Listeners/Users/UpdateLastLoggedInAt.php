@@ -11,17 +11,7 @@ use Illuminate\Queue\InteractsWithQueue;
 class UpdateLastLoggedInAt
 {
     /**
-     * Create the event listener.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //
-    }
-
-    /**
-     * Handle the event.
+     * Store DateTime whenever user logs in the app
      *
      * @param  Login  $event
      * @return void

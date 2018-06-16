@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Cv;
 
 use App\Http\Controllers\Controller;
-use App\Education;
+use App\Models\Education;
 use Illuminate\Http\Request;
 
 class EducationController extends Controller
@@ -23,7 +23,7 @@ class EducationController extends Controller
     public function index()
     {
         $educationData = Education::all();
-        
+
         return view('cv.education.index', compact('educationData'));
     }
 

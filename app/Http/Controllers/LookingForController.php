@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\LookingFor;
+use App\Models\LookingFor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 

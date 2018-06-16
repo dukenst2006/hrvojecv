@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Changelog;
+use App\Models\Changelog;
 use Validator;
 
 class ChangelogController extends Controller
@@ -69,7 +69,7 @@ class ChangelogController extends Controller
 
     /**
      * Edit record
-     * @param  $id 
+     * @param  $id
      * @return view
      */
     public function edit($id)
@@ -98,7 +98,7 @@ class ChangelogController extends Controller
     		return redirect()->back()->withErrors($validator)->withInput();
     	}
 
-        // else update changelog record by id 
+        // else update changelog record by id
     	$newChangelog = Changelog::findOrFail($id);
     	$newChangelog->title = $request->title;
     	$newChangelog->description = $request->desc;

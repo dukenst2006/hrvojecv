@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\MessageController;
-use App\Job;
-use App\Message;
+use App\Models\Job;
+use App\Models\Message;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Validator;
@@ -128,9 +128,11 @@ class JobController extends Controller
     }
 
     /**
-     * 
-     * @param  Request $request 
-     * @param  $id 
+     * If Admin changes Job stats, send Authed user notification via Messages
+     * that is has been changed.
+     *
+     * @param  Request $request
+     * @param  $id
      * @return Response
      */
     public function toggleStatus(Request $request, $id)
@@ -145,8 +147,6 @@ class JobController extends Controller
         $message->type = 'job';
         $message->message = 'Your job status has been changed to '.$changeStatus->status;
         $message->save();
-
-        //////// SEND MAIL TO USER THAT MADE JOB OFFER ABOUT STATUS CHANGE
 
         return redirect()->route('job_offer.index')->with('status', 'Job status changed.');
     }

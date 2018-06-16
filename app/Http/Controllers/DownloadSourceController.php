@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\DownloadSource;
-use App\PersonalInfo;
-use App\WorkExperience;
-use App\Project;
-use App\Language;
-use App\Education;
+use App\Models\DownloadSource;
+use App\Models\PersonalInfo;
+use App\Models\WorkExperience;
+use App\Models\Project;
+use App\Models\Language;
+use App\Models\Education;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -82,7 +82,7 @@ class DownloadSourceController extends Controller
         //// get extension
         $filename = $tempFilename . '-' . Carbon::now()->toDateString() . '.' . $extension;
         //// e.g. fileTIt-29012018.pdf
-        
+
         $file->storeAs($type, $filename);
 
         $newFile = new DownloadSource();
@@ -91,7 +91,7 @@ class DownloadSourceController extends Controller
         $newFile->file_name = $filename;
         $newFile->type = $type;
         $newFile->save();
-        
+
         if($type == 'sourceFile'){
             return redirect()->route('files.index');
         }
@@ -137,7 +137,7 @@ class DownloadSourceController extends Controller
         return redirect()->route('screenshots.index')->with('status', 'File successfully deleted.');
     }
 
-    
+
     public function downloadPdfCv()
     {
         $personalInfo = PersonalInfo::all();

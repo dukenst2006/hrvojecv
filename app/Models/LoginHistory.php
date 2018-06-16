@@ -1,8 +1,8 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
-use App\LoginHistory;
+use App\Models\LoginHistory;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
@@ -21,6 +21,11 @@ class LoginHistory extends Model
         'user_id', 'login'
     ];
 
+    /**
+     *  Get all users with their last login data. Note: Do the eloquent!
+     *
+     * @return var $allUsers
+     */
     public static function getAllUsersWithLastLogin()
     {
         $allUsers = DB::table('users')
@@ -32,8 +37,16 @@ class LoginHistory extends Model
         return $allUsers;
     }
 
+    /**
+     *  Set last login for the user
+     *
+     * @param  int $id
+     * @return  var $setLastLogin
+     */
     public function setLastLogin($id = NULL)
     {
+        // set default value of ID to null if not passed while calling the function
+        // and if so, get it's ID by Auth facade
         if ($id == NULL) {
             $id = Auth::id();
         }

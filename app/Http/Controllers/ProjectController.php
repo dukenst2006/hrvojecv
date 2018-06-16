@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Project;
+use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Intervention\Image\Facades\Image;
@@ -14,7 +14,7 @@ class ProjectController extends Controller
         $this->middleware('user', ['only' => ['index', 'show']]);
     }*/
 
-    
+
     /**
      * Display a listing of the resource.
      *
